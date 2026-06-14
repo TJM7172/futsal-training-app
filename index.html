@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#19724c" />
+    <title>フットサル筋トレ管理</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Futsal Strength Log</p>
+          <h1>今日のメニュー</h1>
+        </div>
+        <div class="menu-switch" aria-label="メニュー切り替え">
+          <button class="switch-button active" id="menuA" type="button">A</button>
+          <button class="switch-button" id="menuB" type="button">B</button>
+        </div>
+      </header>
+
+      <section class="status-band">
+        <div>
+          <span class="label">今日</span>
+          <strong id="todayMenu">Aメニュー</strong>
+        </div>
+        <div>
+          <span class="label">目的</span>
+          <strong>後半でも動ける脚</strong>
+        </div>
+        <div>
+          <span class="label">方針</span>
+          <strong>上半身は維持寄り</strong>
+        </div>
+      </section>
+
+      <section class="controls" aria-label="状態入力">
+        <label class="toggle"><input id="fatigueToggle" type="checkbox" /><span>疲労あり</span></label>
+        <label class="toggle"><input id="kneeToggle" type="checkbox" /><span>膝痛あり</span></label>
+      </section>
+
+      <section class="notice" id="notice" hidden></section>
+      <section class="workout-list" id="workoutList" aria-label="トレーニングメニュー"></section>
+
+      <section class="actions" aria-label="記録操作">
+        <button class="primary" id="completeAll" type="button">全部できた</button>
+        <button class="secondary" id="savePartial" type="button">入力内容で記録</button>
+      </section>
+
+      <section class="ai-share">
+        <div class="section-head">
+          <h2>AI共有メモ</h2>
+          <button class="ghost" id="copyAiMemo" type="button">コピー</button>
+        </div>
+        <textarea id="aiMemo" readonly aria-label="AI共有メモ"></textarea>
+      </section>
+
+      <section class="history-wrap">
+        <div class="section-head">
+          <h2>最近の記録</h2>
+          <button class="ghost" id="resetData" type="button">初期化</button>
+        </div>
+        <ol class="history" id="historyList"></ol>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
